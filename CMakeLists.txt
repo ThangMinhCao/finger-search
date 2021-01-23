@@ -1,9 +1,16 @@
-cmake_minimum_required(VERSION 3.12)
-project(finger_search)
+cmake_minimum_required(VERSION 3.16)
+project(finger-search)
 
 set(CMAKE_CXX_STANDARD 20)
 
-file(GLOB finger_search_HEADERS CONFIGURE_DEPENDS "./include/*.h")
-file(GLOB finger_search_SRC CONFIGURE_DEPENDS "./src/*.cpp")
+set(MAIN_HEADERS
+        include/Treap.h
+        include/Random.h
+)
 
-add_executable(finger_search ${finger_search_HEADERS} ${finger_search_SRC})
+set(MAIN_SOURCE
+        src/Treap.cpp
+        src/main.cpp
+        src/Random.cpp)
+
+add_executable(finger-search ${MAIN_HEADERS} ${MAIN_SOURCE})
