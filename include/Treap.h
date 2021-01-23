@@ -18,6 +18,8 @@ class Treap {
   private:
     void leftRotate(Node * node);
     void rightRotate(Node * node);
+    bool treapAdd(int value, Node* &current, Node* prev= nullptr);
+    void cleanupMemory(Node * node);
 };
 
 
