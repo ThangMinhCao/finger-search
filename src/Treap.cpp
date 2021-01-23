@@ -81,3 +81,16 @@ void Treap::rightRotate(Node *node) {
     }
   }
 }
+
+Treap::~Treap() {
+  cleanupMemory(root);
+}
+
+void Treap::cleanupMemory(Node *node) {
+  if (!node) return;
+  Node *left = node->left;
+  Node *right = node->right;
+  delete node;
+  cleanupMemory(left);
+  cleanupMemory(right);
+}

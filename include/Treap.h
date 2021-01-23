@@ -11,6 +11,7 @@ class Treap {
 
   public:
     Treap() : root(nullptr) {};
+    ~Treap();
     bool add(int value);
     bool remove(int value);
     Node * root;
