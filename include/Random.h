@@ -8,4 +8,4 @@ class Random{
     static int getInt(int start, int end);
     static float getReal(int start, int end);
 };
-#endif
+#endif // RANDOM_GEN_H
