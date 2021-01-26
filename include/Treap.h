@@ -1,8 +1,10 @@
 #ifndef FINGER_SEARCH_TREAP_H
 #define FINGER_SEARCH_TREAP_H
 
+/**
+ * Treap data structure: A randomized Binary Search Tree tat support
+ */
 class Treap {
-
   public:
     struct Node {
       int data;
@@ -16,12 +18,14 @@ class Treap {
     ~Treap();
     bool add(int value);
     bool remove(int value);
-    void display() const;
+    void display(bool showPriority=false) const;
+    Node* find(int value) const;
 
   private:
     static void leftRotate(Node* &node);
     static void rightRotate(Node* &node);
     bool treapAdd(int value, Node* &current, Node* prev= nullptr);
+    bool treapRemove(int value, Node* &current);
     void cleanupMemory(Node * node);
 };
 

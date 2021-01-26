@@ -1,13 +1,13 @@
 #include "../include/TreePrinter.h"
 
-void TreePrinter::printTree(Treap::Node *root, Trunk *prev, bool isLeft) {
+void TreePrinter::printTree(Treap::Node *root, bool showPriority, Trunk *prev, bool isLeft) {
   if (root == nullptr)
     return;
 
   std::string prev_str = "    ";
   Trunk *trunk = new Trunk(prev, prev_str);
 
-  printTree(root->left, trunk, true);
+  printTree(root->left, showPriority, trunk, true);
 
   if (!prev)
     trunk->str = "———";
@@ -20,13 +20,18 @@ void TreePrinter::printTree(Treap::Node *root, Trunk *prev, bool isLeft) {
   }
 
   showTrunks(trunk);
-  std::cout << root->data << std::endl;
+  std::cout << root->data;
+  if (showPriority) {
+    std::cout << " | " << root->priority;
+  }
+  std::cout<< std::endl;
 
   if (prev)
     prev->str = prev_str;
   trunk->str = "    |";
 
-  printTree(root->right, trunk, false);
+  printTree(root->right, showPriority, trunk, false);
+  delete trunk;
 }
 
 void TreePrinter::showTrunks(TreePrinter::Trunk *p) {

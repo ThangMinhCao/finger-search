@@ -20,7 +20,7 @@ class TreePrinter {
   };
 
   public:
-    static void printTree(Treap::Node *root, Trunk *prev= nullptr, bool isLeft=false);
+    static void printTree(Treap::Node *root, bool showPriority, Trunk *prev= nullptr, bool isLeft=false);
 
   private:
     static void showTrunks(Trunk *p);

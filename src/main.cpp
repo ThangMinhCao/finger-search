@@ -7,10 +7,12 @@
 int main() {
   Treap treap = Treap();
 
-  for (int i = 0; i < 10; i++) {
-    treap.add(Random::getInt(1, 100));
+  for (int i = 0; i < 5; i++) {
+    treap.add(Random::getInt(1, 10));
   }
   treap.display();
 
+  Treap::Node* foundNode = treap.find(5);
+  std::cout << "Found node data: " << foundNode->data << std::endl;
   return 0;
 }
