@@ -3,25 +3,64 @@
 #include "../include/Random.h"
 #include "../include/TreePrinter.h"
 
-Treap::Node::Node(int value, Node* parent, Node* left, Node* right) {
+Treap::Node::Node(double value, Node* parent, Node* left, Node* right, Node* leftParent, Node* rightParent) {
   this->data = value;
   this->parent = parent;
   this->left = left;
   this->right = right;
+  this->leftParent = leftParent;
+  this->rightParent = rightParent;
   priority = Random::getReal(0, 1);
 }
 
-Treap::Node *Treap::find(int value) const {
-  Node* current = root;
+Treap::Node *Treap::search(double value) {
+  return binarySearch(value, root);
+}
+
+Treap::Node *Treap::fingerSearch(double value) {
+  if (value == finger->data) return finger;
+  // LCA = Lowest common ancestor of the node contains value and the finger
+  Node* LCA = root;
+  Node* current = finger;
+  if (value > finger->data) {
+    while (current && current->data <= value) {
+      LCA = current;
+      current = current->rightParent;
+    }
+  } else {
+    while (current && current->data >= value) {
+      LCA = current;
+      current = current->leftParent;
+    }
+  }
+  Node* foundNode = binarySearch(value, LCA);
+  if (foundNode) {
+    finger = foundNode;
+  }
+  return foundNode;
+}
+
+Treap::Node *Treap::binarySearch(double value, Treap::Node* startNode) {
+  Node* current = startNode;
   while (current && current->data != value) {
     current = (current->data > value) ? current->left : current->right;
   }
   return current;
 }
 
-bool Treap::treapAdd(int value, Node* &current, Node* prev) {
+bool Treap::treapAdd(double value, Node* &current, Node* prev) {
   if (!current) {
     current = new Node(value, prev);
+    if (prev && prev->left == current) {
+      current->rightParent = prev;
+      current->leftParent = prev->leftParent;
+    } else if (prev && prev->right == current) {
+      current->leftParent = prev;
+      current->rightParent = prev->rightParent;
+    }
+    if (!prev) {
+      finger = current;
+    }
     return true;
   }
   if (value == current->data) return false;
@@ -39,11 +78,11 @@ bool Treap::treapAdd(int value, Node* &current, Node* prev) {
   return true;
 }
 
-bool Treap::add(int value) {
+bool Treap::add(double value) {
   return treapAdd(value, root);
 }
 
-bool Treap::treapRemove(int value, Treap::Node* &current) {
+bool Treap::treapRemove(double value, Treap::Node* &current) {
   if (!current) return false;
   if (value > current->data) return treapRemove(value, current->right);
   if (value < current->data) return treapRemove(value, current->left);
@@ -68,7 +107,7 @@ bool Treap::treapRemove(int value, Treap::Node* &current) {
   return true;
 }
 
-bool Treap::remove(int value) {
+bool Treap::remove(double value) {
   return treapRemove(value, root);
 }
 
@@ -76,6 +115,10 @@ void Treap::leftRotate(Node* &node) {
   Node *parent = node->parent;
   Node *r = node->right;
   node->parent = r;
+  // Handle left and right parents
+  node->rightParent = r;
+  r->leftParent = node->leftParent;
+
   if (r->left) {
     r->left->parent = node;
   }
@@ -96,6 +139,11 @@ void Treap::rightRotate(Node* &node) {
   Node *parent = node->parent;
   Node *l = node->left;
   node->parent = l;
+
+  // Handle left and right parents
+  node->leftParent = l;
+  l->rightParent = node->rightParent;
+
   if (l->right) {
     l->right->parent = node;
  }
@@ -112,7 +160,7 @@ void Treap::rightRotate(Node* &node) {
   node = l;
 }
 
-void Treap::display(bool showPriority) const {
+void Treap::display(bool showPriority) {
   TreePrinter::printTree(root, showPriority);
 }
 
@@ -126,3 +174,4 @@ void Treap::cleanupMemory(Node* node) {
   cleanupMemory(node->right);
   delete node;
 }
+

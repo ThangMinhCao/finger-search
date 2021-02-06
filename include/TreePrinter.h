@@ -5,7 +5,7 @@
 #include <iostream>
 
 /**
- * Implementation code of this class is from internet resource
+ * Implementation code of this class is from TechieDelight.com
  * Source: https://www.techiedelight.com/c-program-print-binary-tree/
  */
 class TreePrinter {
