@@ -11,7 +11,6 @@ set(MAIN_HEADERS
 set(MAIN_SOURCE
         src/Treap.cpp
         src/main.cpp
-        src/Random.cpp
-        src/TreePrinter.cpp)
+        src/Random.cpp)
 
 add_executable(finger-search ${MAIN_HEADERS} ${MAIN_SOURCE})

@@ -1,31 +1,31 @@
 #include <iostream>
+#include <fstream>
 #include "../include/Treap.h"
-#include "../include/Random.h"
 #include "../include/TreePrinter.h"
 
-Treap::Node::Node(double value, Node* parent, Node* left, Node* right, Node* leftParent, Node* rightParent) {
-  this->data = value;
-  this->parent = parent;
-  this->left = left;
-  this->right = right;
-  this->leftParent = leftParent;
-  this->rightParent = rightParent;
-  priority = Random::getReal(0, 1);
+template<class Node>
+Node* Treap<Node>::search(double value) {
+  int numNodesVisited = 0;
+  Node* foundNode = binarySearch(value, root, numNodesVisited);
+  std::ofstream data_file;
+  data_file.open("results.txt", std::ios_base::app);
+  data_file << "Number of nodes visited [BS|FS]: " << numNodesVisited;
+  data_file.close();
+  return foundNode;
 }
 
-Treap::Node *Treap::search(double value) {
-  return binarySearch(value, root);
-}
-
-Treap::Node *Treap::fingerSearch(double value) {
+template<class Node>
+Node* Treap<Node>::fingerSearch(double value) {
   if (value == finger->data) return finger;
   // LCA = Lowest common ancestor of the node contains value and the finger
   Node* LCA = root;
   Node* current = finger;
+  int numNodesVisited = 0;
   if (value > finger->data) {
     while (current && current->data <= value) {
       LCA = current;
       current = current->rightParent;
+      numNodesVisited++;
     }
   } else {
     while (current && current->data >= value) {
@@ -33,22 +33,29 @@ Treap::Node *Treap::fingerSearch(double value) {
       current = current->leftParent;
     }
   }
-  Node* foundNode = binarySearch(value, LCA);
+  Node* foundNode = binarySearch(value, LCA, numNodesVisited);
   if (foundNode) {
     finger = foundNode;
   }
+  std::ofstream data_file;
+  data_file.open("results.txt", std::ios_base::app);
+  data_file << "|" << numNodesVisited << std::endl;
+  data_file.close();
   return foundNode;
 }
 
-Treap::Node *Treap::binarySearch(double value, Treap::Node* startNode) {
+template<class Node>
+Node* Treap<Node>::binarySearch(double value, Node* startNode, int& numNodesVisited) {
   Node* current = startNode;
   while (current && current->data != value) {
     current = (current->data > value) ? current->left : current->right;
+    numNodesVisited++;
   }
   return current;
 }
 
-bool Treap::treapAdd(double value, Node* &current, Node* prev) {
+template<class Node>
+bool Treap<Node>::treapAdd(double value, Node* &current, Node* prev) {
   if (!current) {
     current = new Node(value, prev);
     if (prev && prev->left == current) {
@@ -78,11 +85,13 @@ bool Treap::treapAdd(double value, Node* &current, Node* prev) {
   return true;
 }
 
-bool Treap::add(double value) {
+template<class Node>
+bool Treap<Node>::add(double value) {
   return treapAdd(value, root);
 }
 
-bool Treap::treapRemove(double value, Treap::Node* &current) {
+template<class Node>
+bool Treap<Node>::treapRemove(double value, Node* &current) {
   if (!current) return false;
   if (value > current->data) return treapRemove(value, current->right);
   if (value < current->data) return treapRemove(value, current->left);
@@ -107,11 +116,13 @@ bool Treap::treapRemove(double value, Treap::Node* &current) {
   return true;
 }
 
-bool Treap::remove(double value) {
+template<class Node>
+bool Treap<Node>::remove(double value) {
   return treapRemove(value, root);
 }
 
-void Treap::leftRotate(Node* &node) {
+template<class Node>
+void Treap<Node>::leftRotate(Node* &node) {
   Node *parent = node->parent;
   Node *r = node->right;
   node->parent = r;
@@ -135,7 +146,8 @@ void Treap::leftRotate(Node* &node) {
   node = r;
 }
 
-void Treap::rightRotate(Node* &node) {
+template<class Node>
+void Treap<Node>::rightRotate(Node* &node) {
   Node *parent = node->parent;
   Node *l = node->left;
   node->parent = l;
@@ -160,18 +172,32 @@ void Treap::rightRotate(Node* &node) {
   node = l;
 }
 
-void Treap::display(bool showPriority) {
+template<class Node>
+void Treap<Node>::display(bool showPriority) {
   TreePrinter::printTree(root, showPriority);
 }
 
-Treap::~Treap() {
+template<class Node>
+Treap<Node>::~Treap() {
   cleanupMemory(root);
 }
 
-void Treap::cleanupMemory(Node* node) {
+template<class Node>
+void Treap<Node>::cleanupMemory(Node* node) {
   if (!node) return;
   cleanupMemory(node->left);
   cleanupMemory(node->right);
   delete node;
 }
 
+template class Node<int>;
+template class Node<long>;
+template class Node<long long unsigned>;
+template class Node<float>;
+template class Node<double>;
+
+template class Treap<Node<int>>;
+template class Treap<Node<long>>;
+template class Treap<Node<long long unsigned>>;
+template class Treap<Node<float>>;
+template class Treap<Node<double>>;

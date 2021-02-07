@@ -4,67 +4,74 @@
 #include <fstream>
 #include "../include/Random.h"
 #include "../include/Treap.h"
+#include<unistd.h>
+
+#define NUM_NODES 500000
+// #define NUM_NODES 50000
+using T = int;
 
 int main() {
-  std::cout << "hello" << std::endl;
+  using Treap = Treap<Node<T>>;
+
   Treap treap = Treap();
-  int added = 0;
+  T added = 0;
 
   std::ofstream data_file;
-  for (long i = 0; i < 50000000; i++) {
-    double value = Random::getReal(0, 50000000);
-  // for (long i = 0; i < 800; i++) {
-  //   long value = Random::get64Int(0, 900);
+  clock_t tStart = clock();
+  for (long i = 0; i < NUM_NODES; i++) {
+    T value;
+    if (typeid(T) == typeid(int) || typeid(T) == typeid(long) || typeid(T) == typeid(long long unsigned))
+      value = Random::get64Int(0, NUM_NODES);
+    if (typeid(T) == typeid(float) || typeid(T) == typeid(double))
+      value = Random::getReal(0, NUM_NODES);
+
     if (treap.add(value)) added++;
     std::cout << "Added [" << i << "]: " << value << std::endl;
   }
-  clock_t tStart = clock();
-
   double initializationTime = (double)(clock() - tStart)/CLOCKS_PER_SEC;
   printf("Initialization time taken: %fs\n\n", initializationTime);
+  printf("Nodes added: %ds\n\n", added);
+  data_file.open("results.txt");
+  data_file << "Number of nodes: " << added << std::endl;
+  data_file << "Initialization time taken: " << initializationTime << "s" << std::endl;
+  data_file.close();
 
+  // For loop to search for random elements with amount = 1000 times of added nodes 
   double binarySearchTime = 0;
   double fingerSearchTime = 0;
-  std::vector<int> indicesForSearches;
-  double findingValue;
-  for (int i = 0; i < added * 10; i++) {
-    tStart = clock();
-    findingValue = Random::getReal(0, 50000);
-    Treap::Node* BSresult = treap.search(findingValue);
-    binarySearchTime += (double)(clock() - tStart)/CLOCKS_PER_SEC;
+  std::vector<T> indicesForSearches;
+  T findingValue;
+  for (T i = 0; i < added * 10; i++) {
+    findingValue = Random::getReal(0, NUM_NODES);
+    // std::cout << "Seaching for: " << findingValue << std::endl;
 
     tStart = clock();
-    Treap::Node* FSresult = treap.fingerSearch(findingValue);
+    Node<T>* BSresult = treap.search(findingValue);
+    double BStime = (double)(clock() - tStart)/CLOCKS_PER_SEC;
+    binarySearchTime += BStime;
+
+    tStart = clock();
+    Node<T>* FSresult = treap.fingerSearch(findingValue);
+    double FStime = (double)(clock() - tStart)/CLOCKS_PER_SEC;
+    fingerSearchTime += FStime;
+
+
+    if (FSresult != BSresult)
+      std::cout << "Different Nodes Found: " << BSresult << " & " << FSresult << std::endl;
     // if (FSresult)
-    //   std::cout << FSresult->data << std::endl;
-    fingerSearchTime += (double)(clock() - tStart)/CLOCKS_PER_SEC;
+    //   std::cout << "Found: " << FSresult->data << std::endl;
   }
-  
-  // Binary Search timer
-  // for (int i = 0; i < indicesForSearches.size(); i++) {
-  //   treap.search(addedNumbers[indicesForSearches[i]]);
-  // }
 
   printf("Binary search time taken: %fs\n", binarySearchTime);
   // Output for BinarySearch
   data_file.open("results.txt", std::ios_base::app);
-  data_file << "Number of nodes: " << added << std::endl;
-  data_file << "Initialization time taken: " << initializationTime << "s\n";
-  data_file << "\nBinary Search time taken: " << binarySearchTime << "s\n";
+  data_file << "Binary Search time taken: " << binarySearchTime << "s" << std::endl;
   data_file.close();
 
-  // Finger Search timer
-  std::cout << std::endl;
-  // tStart = clock();
-  // for (int i = 0; i < indicesForSearches.size(); i++) {
-  //   treap.search(addedNumbers[indicesForSearches[i]]);
-  // }
-  // double fingerSearchTime = (double)(clock() - tStart)/CLOCKS_PER_SEC;
-
   // Output for FingerSearch
-  printf("Finger search time taken: %fs\n", fingerSearchTime);
+  printf("Finger search time taken: %fs\n\n", fingerSearchTime);
   data_file.open("results.txt", std::ios_base::app);
-  data_file << "\nFinger Search time taken:  " << fingerSearchTime << "s\n";
+  data_file << "Finger Search time taken:  " << fingerSearchTime << "s" << std::endl << std::endl << std::endl;
   data_file.close();
   return 0;
 }
