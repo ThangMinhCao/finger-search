@@ -4,23 +4,33 @@
 #include "../include/TreePrinter.h"
 
 template<class Node>
+void Treap<Node>::printTotalNodesVisited() {
+  // std::cout << "Total Comparisons [BS|FS]: "
+  //           << BSTotalComparisons << " | "
+  //           << FSTotalComparisons << std::endl;
+
+  // std::ofstream data_file;
+  // data_file.open("results.txt", std::ios_base::app);
+  // data_file << "Total Comparisons [BS|FS]: "
+  //           << BSTotalComparisons << " | "
+  //           << FSTotalComparisons << std::endl;
+  // data_file.close();
+}
+
+template<class Node>
 Node* Treap<Node>::search(double value) {
-  int numNodesVisited = 0;
+  numNodesVisited = 0;
   Node* foundNode = binarySearch(value, root, numNodesVisited);
-  std::ofstream data_file;
-  data_file.open("results.txt", std::ios_base::app);
-  data_file << "Number of nodes visited [BS|FS]: " << numNodesVisited;
-  data_file.close();
   return foundNode;
 }
 
 template<class Node>
 Node* Treap<Node>::fingerSearch(double value) {
+  numNodesVisited = 0;
   if (value == finger->data) return finger;
   // LCA = Lowest common ancestor of the node contains value and the finger
   Node* LCA = root;
   Node* current = finger;
-  int numNodesVisited = 0;
   if (value > finger->data) {
     while (current && current->data <= value) {
       LCA = current;
@@ -31,17 +41,18 @@ Node* Treap<Node>::fingerSearch(double value) {
     while (current && current->data >= value) {
       LCA = current;
       current = current->leftParent;
+      numNodesVisited++;
     }
   }
+  numNodesVisited--;
   Node* foundNode = binarySearch(value, LCA, numNodesVisited);
-  if (foundNode) {
-    finger = foundNode;
-  }
-  std::ofstream data_file;
-  data_file.open("results.txt", std::ios_base::app);
-  data_file << "|" << numNodesVisited << std::endl;
-  data_file.close();
+  // if (foundNode) {
+  //   finger = foundNode;
+  // }
   return foundNode;
+  
+  // Node* foundNode = binarySearch(value, root, FSTotalComparisons);
+  // return foundNode;
 }
 
 template<class Node>
@@ -49,7 +60,7 @@ Node* Treap<Node>::binarySearch(double value, Node* startNode, int& numNodesVisi
   Node* current = startNode;
   while (current && current->data != value) {
     current = (current->data > value) ? current->left : current->right;
-    numNodesVisited++;
+    numNodesVisited += 1;
   }
   return current;
 }

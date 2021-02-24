@@ -30,17 +30,19 @@ class Node {
 template<class Node>
 class Treap {
   public:
-    Treap() : root(nullptr) {};
+    Treap() : root(nullptr), numNodesVisited(0) {};
     ~Treap();
     bool add(double value);
     bool remove(double value);
     void display(bool showPriority=false);
     Node* search(double value);
     Node* fingerSearch(double value);
-
-  private:
+    void printTotalNodesVisited();
+    int numNodesVisited;
     Node* root;
     Node* finger;
+
+  private:
     static void leftRotate(Node* &node);
     static void rightRotate(Node* &node);
     bool treapAdd(double value, Node* &current, Node* prev= nullptr);
