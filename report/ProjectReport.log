@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.23)  24 FEB 2021 00:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.9)  9 MAR 2021 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -150,7 +150,7 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2020/12/07 v2.8 Micro-typographical refinements (RS)
+Package: microtype 2021/02/25 v2.8b Micro-typographical refinements (RS)
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
@@ -162,16 +162,17 @@ LaTeX Info: Redefining \textls on input line 788.
 LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
 \MT@listname@count=\count266
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2020/12/07 v2.8 Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2021/02/25 v2.8b Definitions specific to pdftex (RS)
+
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
 \MT@outer@space=\skip52
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2020/12/07 v2.8 microtype main configuration file (RS)
+File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
 )) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 (/home/hswin/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
@@ -202,11 +203,11 @@ Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 \Hy@linkcounter=\count267
 \Hy@pagecounter=\count268
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
-File: hyperref-langpatches.def 2021-02-10 v7.00j Hyperref: patches for babel la
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
 nguages
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
@@ -215,7 +216,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count269
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -263,7 +264,7 @@ with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
@@ -827,6 +828,30 @@ File: pgflibraryplotmarks.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \WF@box=\box75
 \WF@everypar=\toks47
 Package: wrapfig 2003/01/31  v 3.6
+) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen303
+\lightrulewidth=\dimen304
+\cmidrulewidth=\dimen305
+\belowrulesep=\dimen306
+\belowbottomsep=\dimen307
+\aboverulesep=\dimen308
+\abovetopsep=\dimen309
+\cmidrulesep=\dimen310
+\cmidrulekern=\dimen311
+\defaultaddspace=\dimen312
+\@cmidla=\count325
+\@cmidlb=\count326
+\@aboverulesep=\dimen313
+\@belowrulesep=\dimen314
+\@thisruleclass=\count327
+\@lastruleclass=\count328
+\@thisrulewidth=\dimen315
+) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen316
+\c@nlinenum=\count329
+\TeXr@lab=\toks48
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -835,18 +860,18 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count325
+\etb@tempcnta=\count330
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/02/22 3.54 The Babel package
+Package: babel 2021/03/03 3.55 The Babel package
 (/home/hswin/.TinyTeX/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2021/02/22 3.54 Babel common definitions
-\babel@savecnt=\count326
-\U@D=\dimen303
+File: babel.def 2021/03/03 3.55 Babel common definitions
+\babel@savecnt=\count331
+\U@D=\dimen317
 \l@babelnohyphens=\language86
 (/home/hswin/.TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 )
-\bbl@dirlevel=\count327
+\bbl@dirlevel=\count332
 (/home/hswin/.TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: \l@canadian = using hyphenrules for english
@@ -858,38 +883,38 @@ Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 )) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count328
+File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count333
 \l__pdf_internal_box=\box76
 ) (./ProjectReport.aux)
 \openout1 = `ProjectReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Info: Redefining \microtypecontext on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Info: Redefining \microtypecontext on input line 130.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 129.
+LaTeX Info: Redefining \showhyphens on input line 130.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -897,7 +922,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 129.
+Package hyperref Info: Link coloring OFF on input line 130.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -906,11 +931,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 y
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count329
+\c@section@level=\count334
 )
-LaTeX Info: Redefining \ref on input line 129.
-LaTeX Info: Redefining \pageref on input line 129.
-LaTeX Info: Redefining \nameref on input line 129.
+LaTeX Info: Redefining \ref on input line 130.
+LaTeX Info: Redefining \pageref on input line 130.
+LaTeX Info: Redefining \nameref on input line 130.
 (./ProjectReport.out) (./ProjectReport.out)
 \@outlinefile=\write4
 \openout4 = `ProjectReport.out'.
@@ -951,17 +976,17 @@ LaTeX Info: Redefining \nameref on input line 129.
 
 (/home/hswin/.TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count330
-\scratchdimen=\dimen304
+\scratchcounter=\count335
+\scratchdimen=\dimen318
 \scratchbox=\box77
-\nofMPsegments=\count331
-\nofMParguments=\count332
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count333
-\MPscratchDim=\dimen305
-\MPnumerator=\count334
-\makeMPintoPDFobject=\count335
-\everyMPtoPDFconversion=\toks49
+\nofMPsegments=\count336
+\nofMParguments=\count337
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count338
+\MPscratchDim=\dimen319
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
+\everyMPtoPDFconversion=\toks50
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -970,47 +995,47 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count336
+\c@lstlisting=\count341
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 129.
+ on input line 130.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-31.
+32.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-31.
+32.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-131.
+132.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-131.
+132.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 131.
+(Font)              <14.4> on input line 132.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 131.
+(Font)              <10> on input line 132.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 131.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 131
+(Font)              <7> on input line 132.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 132
 .
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 131
+LaTeX Font Info:    Trying to load font information for U+msb on input line 132
 .
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1018,53 +1043,96 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 143.
+(Font)              <12> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 143.
+(Font)              <8> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 143.
+(Font)              <6> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 146.
-<Tree.png, id=17, 282.05376pt x 325.215pt>
-File: Tree.png Graphic file (type png)
-<use Tree.png>
-Package pdftex.def Info: Tree.png  used on input line 184.
-(pdftex.def)             Requested size: 164.4176pt x 189.5776pt.
+(Font)              <5> on input line 147.
 [1
 
-{/home/hswin/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2pdfTeX w
-arning (ext4): destination with the same identifier (name{figure.1}) has been a
-lready used, duplicate ignored
+{/home/hswin/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<tree.png, id=67, 282.05376pt x 325.215pt>
+File: tree.png Graphic file (type png)
+<use tree.png>
+Package pdftex.def Info: tree.png  used on input line 191.
+(pdftex.def)             Requested size: 187.89908pt x 216.65231pt.
+[2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.195 \newpage
-               <./Tree.png>] [3] (./ProjectReport.aux)
+l.223 given below. \newpage
+                            <./Tree.png>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+25.
+(/home/hswin/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 226.
+[3]
+<TreeRotation.png, id=123, 512.91624pt x 201.75375pt>
+File: TreeRotation.png Graphic file (type png)
+<use TreeRotation.png>
+Package pdftex.def Info: TreeRotation.png  used on input line 320.
+(pdftex.def)             Requested size: 358.27975pt x 140.92804pt.
+[4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.337  
+        node->rightParent = r; // set right parent of the given node <./TreeRot
+ation.png>] [5]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+12.
+(/home/hswin/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [6pdfTeX warning (ext4): destination with the same identifier (name{figure.3}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.451 \newpage
+              ]
+PGFPlots: reading {TreapGraph.txt}
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.503 \newpage
+              ] [8] (./ProjectReport.aux)
 Package rerunfilecheck Info: File `ProjectReport.out' has not changed.
-(rerunfilecheck)             Checksum: 456B0E4DED00180D56ECF931F731BFD0;298.
+(rerunfilecheck)             Checksum: C7FE3FCAA2B353A59A172559F07DBE08;1464.
  ) 
 Here is how much of TeX's memory you used:
- 35258 strings out of 479061
- 780293 string characters out of 5862357
- 1362531 words of memory out of 5000000
- 51973 multiletter control sequences out of 15000+600000
- 467272 words of font info for 118 fonts, out of 8000000 for 9000
+ 36674 strings out of 479001
+ 804783 string characters out of 5860179
+ 1675864 words of memory out of 5000000
+ 53241 multiletter control sequences out of 15000+600000
+ 480440 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,8n,88p,729b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,13n,88p,729b,2130s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/hswin/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/hswi
-n/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/hswin/.TinyTeX/texmf-
-dist/fonts/enc/dvips/lm/lm-rm.enc}</home/hswin/.TinyTeX/texmf-dist/fonts/type1/
-public/lm/lmbx12.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmm
-i10.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></hom
-e/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></home/hswin/.TinyT
-eX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/hswin/.TinyTeX/texmf-dist/
-fonts/type1/public/lm/lmr12.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/pu
-blic/lm/lmr17.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.p
-fb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></home/hswin
-/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on ProjectReport.pdf (3 pages, 180601 bytes).
+n/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/home/hswin/.TinyTeX/texmf
+-dist/fonts/enc/dvips/lm/lm-rm.enc}{/home/hswin/.TinyTeX/texmf-dist/fonts/enc/d
+vips/lm/lm-mathsy.enc}{/home/hswin/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec
+.enc}</home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/h
+swin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></home/hswin/.TinyTeX
+/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></home/hswin/.TinyTeX/texmf-dist/f
+onts/type1/public/lm/lmmi7.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/pub
+lic/lm/lmmi8.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.p
+fb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/hswi
+n/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></home/hswin/.TinyTeX/tex
+mf-dist/fonts/type1/public/lm/lmr6.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/t
+ype1/public/lm/lmr7.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/
+lmr8.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></ho
+me/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/hswin/.Tin
+yTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></home/hswin/.TinyTeX/texmf-di
+st/fonts/type1/public/lm/lmtt12.pfb>
+Output written on ProjectReport.pdf (8 pages, 306114 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 34850 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 130 named destinations out of 1000 (max. 500000)
+ 43103 words of extra memory for PDF output out of 51595 (max. 10000000)
 

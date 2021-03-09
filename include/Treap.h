@@ -27,28 +27,28 @@ class Node {
  *
  * Operation supported: add, remove, search
  */
-template<class Node>
+template<typename T>
 class Treap {
   public:
     Treap() : root(nullptr), numNodesVisited(0) {};
     ~Treap();
-    bool add(double value);
-    bool remove(double value);
+    bool add(T value);
+    bool remove(T value);
     void display(bool showPriority=false);
-    Node* search(double value);
-    Node* fingerSearch(double value);
+    Node<T>* search(T value);
+    Node<T>* fingerSearch(T value);
     void printTotalNodesVisited();
     int numNodesVisited;
-    Node* root;
-    Node* finger;
 
   private:
-    static void leftRotate(Node* &node);
-    static void rightRotate(Node* &node);
-    bool treapAdd(double value, Node* &current, Node* prev= nullptr);
-    bool treapRemove(double value, Node* &current);
-    void cleanupMemory(Node* node);
-    static Node* binarySearch(double value, Node* startNode, int& numNodesVisited);
+    Node<T>* root;
+    Node<T>* finger;
+    static void leftRotate(Node<T>* &node);
+    static void rightRotate(Node<T>* &node);
+    bool treapAdd(double value, Node<T>* &current, Node<T>* prev= nullptr);
+    bool treapRemove(double value, Node<T>* &current);
+    void cleanupMemory(Node<T>* node);
+    static Node<T>* binarySearch(double value, Node<T>* startNode, int& numNodesVisited);
 };
 
 
