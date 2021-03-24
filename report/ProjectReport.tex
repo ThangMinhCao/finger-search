@@ -125,7 +125,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{An Extended Feature of Some Data Structures}
 \author{Minh Thang Cao}
-\date{09 March 2021}
+\date{23 March 2021}
 
 \begin{document}
 \maketitle
@@ -162,9 +162,9 @@ properties. The nodes order in a Treap satisfies ascending values in an
 inorder traversal while their priority satisfies min-heap (or max-heap)
 property, in which priority of a node is always smaller (or larger) than
 its children. This randomized combination creates a special property
-that the \emph{expected} height of a Treap is \(O(logn)\) in average,
+that the \emph{expected} height of a Treap is \(O(\log n)\) in average,
 with \(n\) is the total number of nodes. Therefore, it supports
-searching and some associated operations in expected \(O(logn)\) time
+searching and some associated operations in expected \(O(\log n)\) time
 which is standard for most balanced trees. Since Finger Search achieve
 its goal in an expected running time, Treap is a very suitable
 randomized data structure for Finger Search.
@@ -174,8 +174,8 @@ my implementation. Due to R. Seidel and C.R. Aragon (see \cite{1}),
 there are several ways to achieve the running time proportional to the
 distance \(d\) such as using multiple pointers, multiple keys, or even
 without anything by relying on the shortness of the search path, and
-these approaches all give us the \(O(logd)\) expected running time, see
-\cite{1} for more details. What makes Finger Search different from
+these approaches all give us the \(O(\log d)\) expected running time,
+see \cite{1} for more details. What makes Finger Search different from
 normal search on Treaps is that if we start at the finger \(f\) and look
 for a node \(v\), Finger Search would points out the lowest common
 ancestor, denoted LCA, of \(f\) and \(v\), then it performs searching
@@ -382,7 +382,7 @@ void Treap<T>::rightRotate(Node<T>* &node) {
 Let \(d\) be a difference between \emph{ranks}\footnote{position of the
   value in the sorted array of all values on the tree} of any two node
 values on a Treap. Due to Seidel and Aragon \cite{1}, the expected
-running time of Finger Search on Treap theoretically is \(O(logd)\).
+running time of Finger Search on Treap theoretically is \(O(\log d)\).
 Therefore, the closer to the \(finger\) the target value is, the faster
 the expected running time will be. Thus, to test and prove if the
 running time of Finger Search in practice is identical to the theory,
@@ -455,13 +455,13 @@ As you can see, while the running time of Finger Search increases when
 same for all \(d\), so we can say that Finger Search depends on \(d\).
 Obviously, since the time increases about 2 when \(d\) is doubled, see
 figure \ref{fig:TreapResult}, the running time of Finger Search is
-approximately \(2logd = O(logd)\). From that, in the below graph, the
-running time for each \(d\) in the graph is divided by \(2logd\),
+approximately \(2\log d = O(\log d)\). From that, in the below graph,
+the running time for each \(d\) in the graph is divided by \(2\log d\),
 denoted \(r_d\) ratio. To see how the running time of Finger Search
-related to \(O(logd)\) in practice, figure \ref{fig:TreapGraph} is
+related to \(O(\log d)\) in practice, figure \ref{fig:TreapGraph} is
 provided below. It is clear that the ratios calculated are almost the
 same for all \(d\). This reflects that the running time of Finger Search
-is \(O(logd)\) in practice.
+is \(O(\log d)\) in practice.
 
 \begin{figure}
 \begin{minipage}{0.95\textwidth}

@@ -3,13 +3,13 @@
 
 #include "../include/Random.h"
 template<typename T>
-class Node {
+class TreapNode {
   public:
     T data;
     double priority;
-    Node *parent, *left, *right, *leftParent, *rightParent;
-    Node(double value, Node* parent=nullptr, Node* left=nullptr,Node* right=nullptr,
-          Node* leftParent=nullptr, Node* rightParent= nullptr) {
+    TreapNode *parent, *left, *right, *leftParent, *rightParent;
+    TreapNode(double value, TreapNode* parent=nullptr, TreapNode* left=nullptr,TreapNode* right=nullptr,
+          TreapNode* leftParent=nullptr, TreapNode* rightParent= nullptr) {
       this->data = value;
       this->parent = parent;
       this->left = left;
@@ -35,20 +35,21 @@ class Treap {
     bool add(T value);
     bool remove(T value);
     void display(bool showPriority=false);
-    Node<T>* search(T value);
-    Node<T>* fingerSearch(T value);
+    TreapNode<T>* search(T value);
+    TreapNode<T>* fingerSearch(T value);
     void printTotalNodesVisited();
     int numNodesVisited;
+    static void test(int numNodes);
 
   private:
-    Node<T>* root;
-    Node<T>* finger;
-    static void leftRotate(Node<T>* &node);
-    static void rightRotate(Node<T>* &node);
-    bool treapAdd(double value, Node<T>* &current, Node<T>* prev= nullptr);
-    bool treapRemove(double value, Node<T>* &current);
-    void cleanupMemory(Node<T>* node);
-    static Node<T>* binarySearch(double value, Node<T>* startNode, int& numNodesVisited);
+    TreapNode<T>* root;
+    TreapNode<T>* finger;
+    static void leftRotate(TreapNode<T>* &node);
+    static void rightRotate(TreapNode<T>* &node);
+    bool treapAdd(double value, TreapNode<T>* &current, TreapNode<T>* prev= nullptr);
+    bool treapRemove(double value, TreapNode<T>* &current);
+    void cleanupMemory(TreapNode<T>* node);
+    static TreapNode<T>* binarySearch(double value, TreapNode<T>* startNode, int& numNodesVisited);
 };
 
 

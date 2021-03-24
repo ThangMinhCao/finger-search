@@ -1,0 +1,49 @@
+Number of nodes: 5000000
+Initialization time taken: 2.17309s
+Jump size: 20
+Average running time FS: 39.8817
+Average running time BS: 44.7127
+Jump size: 40
+Average running time FS: 40.3754
+Average running time BS: 41.5027
+Jump size: 80
+Average running time FS: 41.9393
+Average running time BS: 41.3186
+Jump size: 160
+Average running time FS: 43.7
+Average running time BS: 41.563
+Jump size: 320
+Average running time FS: 46.2551
+Average running time BS: 43.6607
+Jump size: 640
+Average running time FS: 48.3684
+Average running time BS: 44.7823
+Jump size: 1280
+Average running time FS: 48.1796
+Average running time BS: 44.3474
+Jump size: 2560
+Average running time FS: 50.3686
+Average running time BS: 44.5856
+Jump size: 5120
+Average running time FS: 51.7555
+Average running time BS: 43.8798
+Jump size: 10240
+Average running time FS: 53.2053
+Average running time BS: 43.3164
+Jump size: 20480
+Average running time FS: 54.6277
+Average running time BS: 43.2839
+Jump size: 40960
+Average running time FS: 56.1563
+Average running time BS: 43.2849
+Jump size: 81920
+Average running time FS: 57.9879
+Average running time BS: 43.4521
+Jump size: 163840
+Average running time FS: 58.7704
+Average running time BS: 42.898
+Jump size: 327680 (2^14 * 20)
+Average running time FS: 60.6042
+Average running time BS: 43.0317
+
+

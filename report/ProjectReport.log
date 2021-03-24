@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.9)  9 MAR 2021 17:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.17)  23 MAR 2021 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -150,19 +150,19 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2021/02/25 v2.8b Micro-typographical refinements (RS)
+Package: microtype 2021/03/14 v2.8c Micro-typographical refinements (RS)
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
 )
 \MT@toks=\toks24
 \MT@count=\count199
-LaTeX Info: Redefining \textls on input line 788.
+LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen148
-LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1374.
 \MT@listname@count=\count266
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2021/02/25 v2.8b Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2021/03/14 v2.8c Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
@@ -170,7 +170,7 @@ LaTeX Info: Redefining \lslig on input line 915.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2021/02/25 v2.8b microtype main configuration file (RS)
+File: microtype.cfg 2021/03/14 v2.8c microtype main configuration file (RS)
 )) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 (/home/hswin/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
@@ -706,7 +706,7 @@ Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \TX@cols=\count315
 \TX@ftn=\toks42
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2021/01/29 v2.7 Span multiple rows of a table
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip75
 \multirow@cntb=\count316
 \multirow@dima=\skip76
@@ -883,7 +883,7 @@ Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 ) (/home/hswin/.TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 )) (/home/hswin/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count333
 \l__pdf_internal_box=\box76
 ) (./ProjectReport.aux)
@@ -1105,11 +1105,11 @@ Package rerunfilecheck Info: File `ProjectReport.out' has not changed.
 (rerunfilecheck)             Checksum: C7FE3FCAA2B353A59A172559F07DBE08;1464.
  ) 
 Here is how much of TeX's memory you used:
- 36674 strings out of 479001
- 804783 string characters out of 5860179
- 1675864 words of memory out of 5000000
- 53241 multiletter control sequences out of 15000+600000
- 480440 words of font info for 157 fonts, out of 8000000 for 9000
+ 36680 strings out of 479000
+ 805011 string characters out of 5860167
+ 1675980 words of memory out of 5000000
+ 53250 multiletter control sequences out of 15000+600000
+ 480357 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,13n,88p,729b,2130s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/hswin/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/hswi
@@ -1129,7 +1129,7 @@ lmr8.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></ho
 me/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/hswin/.Tin
 yTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></home/hswin/.TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtt12.pfb>
-Output written on ProjectReport.pdf (8 pages, 306114 bytes).
+Output written on ProjectReport.pdf (8 pages, 305845 bytes).
 PDF statistics:
  312 PDF objects out of 1000 (max. 8388607)
  280 compressed objects within 3 object streams

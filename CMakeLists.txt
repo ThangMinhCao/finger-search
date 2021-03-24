@@ -6,11 +6,13 @@ set(CMAKE_CXX_STANDARD 20)
 set(MAIN_HEADERS
         include/Treap.h
         include/Random.h
-        include/TreePrinter.h)
+        include/TreePrinter.h
+        include/Skiplist.h)
 
 set(MAIN_SOURCE
         src/Treap.cpp
         src/main.cpp
-        src/Random.cpp)
+        src/Random.cpp
+        src/Skiplist.cpp)
 
 add_executable(finger-search ${MAIN_HEADERS} ${MAIN_SOURCE})

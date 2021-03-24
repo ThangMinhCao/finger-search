@@ -1,0 +1,257 @@
+Number of nodes: 5000000
+Initialization time taken: 11.0583s
+Jump distance: 40
+Average running time FS: 9.8396
+Average running time BS: 30.2268
+Jump distance: 80
+Average running time FS: 11.9532
+Average running time BS: 29.9677
+Jump distance: 160
+Average running time FS: 13.9481
+Average running time BS: 29.0084
+Jump distance: 320
+Average running time FS: 15.954
+Average running time BS: 30.8017
+Jump distance: 640
+Average running time FS: 18.143
+Average running time BS: 32.1015
+Jump distance: 1280
+Average running time FS: 20.0579
+Average running time BS: 29.7444
+Jump distance: 2560
+Average running time FS: 22.0161
+Average running time BS: 29.6215
+Jump distance: 5120
+Average running time FS: 24.2213
+Average running time BS: 28.8676
+Jump distance: 10240
+Average running time FS: 26.4338
+Average running time BS: 29.0544
+Jump distance: 20480
+Average running time FS: 29.0327
+Average running time BS: 29.4607
+Jump distance: 40960
+Average running time FS: 31.0828
+Average running time BS: 29.272
+Jump distance: 81920
+Average running time FS: 34.1204
+Average running time BS: 30.0375
+Jump distance: 163840
+Average running time FS: 37.1591
+Average running time BS: 30.3824
+Jump distance: 327680
+Average running time FS: 40.7206
+Average running time BS: 31.7524
+Jump distance: 655360
+Average running time FS: 44.3505
+Average running time BS: 33.2072
+
+
+Number of nodes: 5000000
+Initialization time taken: 11.5452s
+Jump distance: 20
+Average running time FS: 7.91054
+Average running time BS: 33.3772
+Jump distance: 40
+Average running time FS: 9.85541
+Average running time BS: 26.893
+Jump distance: 80
+Average running time FS: 11.9009
+Average running time BS: 27.5445
+Jump distance: 160
+Average running time FS: 14.0715
+Average running time BS: 29.01
+Jump distance: 320
+Average running time FS: 15.9985
+Average running time BS: 28.6541
+Jump distance: 640
+Average running time FS: 17.9818
+Average running time BS: 28.187
+Jump distance: 1280
+Average running time FS: 20.0414
+Average running time BS: 29.1156
+Jump distance: 2560
+Average running time FS: 22.1386
+Average running time BS: 28.4085
+Jump distance: 5120
+Average running time FS: 24.3663
+Average running time BS: 28.0401
+Jump distance: 10240
+Average running time FS: 26.3367
+Average running time BS: 28.558
+Jump distance: 20480
+Average running time FS: 29.0807
+Average running time BS: 28.6886
+Jump distance: 40960
+Average running time FS: 31.2514
+Average running time BS: 28.7796
+Jump distance: 81920
+Average running time FS: 33.531
+Average running time BS: 29.0584
+Jump distance: 163840
+Average running time FS: 34.5309
+Average running time BS: 28.2754
+Jump distance: 327680
+Average running time FS: 37.6458
+Average running time BS: 28.9965
+Jump distance: 655360
+Average running time FS: 44.4983
+Average running time BS: 32.335
+
+
+Number of nodes: 5000000
+Initialization time taken: 10.699s
+Jump distance: 20
+Average running time FS: 7.8925
+Average running time BS: 27.2041
+Jump distance: 40
+Average running time FS: 9.95326
+Average running time BS: 28.0649
+Jump distance: 80
+Average running time FS: 11.918
+Average running time BS: 28.8736
+Jump distance: 160
+Average running time FS: 13.9715
+Average running time BS: 27.4262
+Jump distance: 320
+Average running time FS: 15.8764
+Average running time BS: 28.0812
+Jump distance: 640
+Average running time FS: 18.3024
+Average running time BS: 29.7978
+Jump distance: 1280
+Average running time FS: 20.2644
+Average running time BS: 29.4003
+Jump distance: 2560
+Average running time FS: 22.3453
+Average running time BS: 28.0397
+Jump distance: 5120
+Average running time FS: 24.6583
+Average running time BS: 28.8494
+Jump distance: 10240
+Average running time FS: 26.4185
+Average running time BS: 28.127
+Jump distance: 20480
+Average running time FS: 28.3653
+Average running time BS: 28.4053
+Jump distance: 40960
+Average running time FS: 30.1493
+Average running time BS: 28.3681
+Jump distance: 81920
+Average running time FS: 32.8924
+Average running time BS: 28.7313
+Jump distance: 163840
+Average running time FS: 33.6583
+Average running time BS: 27.9549
+Jump distance: 327680
+Average running time FS: 35.6414
+Average running time BS: 27.9997
+Jump distance: 655360
+Average running time FS: 40.2822
+Average running time BS: 27.4228
+
+
+Number of nodes: 5000000
+Initialization time taken: 13.3647s
+Jump distance: 20
+Average running time FS: 7.96995
+Average running time BS: 25.8948
+Jump distance: 40
+Average running time FS: 9.88053
+Average running time BS: 27.0539
+Jump distance: 80
+Average running time FS: 11.9295
+Average running time BS: 27.6581
+Jump distance: 160
+Average running time FS: 13.9528
+Average running time BS: 27.5249
+Jump distance: 320
+Average running time FS: 15.971
+Average running time BS: 29.08
+Jump distance: 640
+Average running time FS: 18.0896
+Average running time BS: 28.9403
+Jump distance: 1280
+Average running time FS: 20.1351
+Average running time BS: 27.0809
+Jump distance: 2560
+Average running time FS: 22.1037
+Average running time BS: 27.6112
+Jump distance: 5120
+Average running time FS: 24.1632
+Average running time BS: 27.5681
+Jump distance: 10240
+Average running time FS: 26.0576
+Average running time BS: 27.4262
+Jump distance: 20480
+Average running time FS: 27.9698
+Average running time BS: 27.2765
+Jump distance: 40960
+Average running time FS: 28.9542
+Average running time BS: 26.6123
+Jump distance: 81920
+Average running time FS: 30.7745
+Average running time BS: 26.374
+Jump distance: 163840
+Average running time FS: 32.8497
+Average running time BS: 26.5728
+Jump distance: 327680
+Average running time FS: 35.3498
+Average running time BS: 27.1354
+Jump distance: 655360
+Average running time FS: 36.0874
+Average running time BS: 26.3364
+
+
+Number of nodes: 5000000
+Initialization time taken: 9.28297s
+Jump distance: 20
+Average running time FS: 7.96424
+Average running time BS: 31.8646
+Jump distance: 40
+Average running time FS: 9.91733
+Average running time BS: 32.6805
+Jump distance: 80
+Average running time FS: 11.8332
+Average running time BS: 33.8607
+Jump distance: 160
+Average running time FS: 13.9954
+Average running time BS: 32.649
+Jump distance: 320
+Average running time FS: 15.9084
+Average running time BS: 34.9268
+Jump distance: 640
+Average running time FS: 18.0993
+Average running time BS: 33.2406
+Jump distance: 1280
+Average running time FS: 20.1492
+Average running time BS: 30.4719
+Jump distance: 2560
+Average running time FS: 22.0396
+Average running time BS: 27.9469
+Jump distance: 5120
+Average running time FS: 23.8518
+Average running time BS: 30.2302
+Jump distance: 10240
+Average running time FS: 26.0848
+Average running time BS: 30.0777
+Jump distance: 20480
+Average running time FS: 28.0146
+Average running time BS: 29.9414
+Jump distance: 40960
+Average running time FS: 30.0283
+Average running time BS: 29.8187
+Jump distance: 81920
+Average running time FS: 32.5531
+Average running time BS: 30.0385
+Jump distance: 163840
+Average running time FS: 35.2083
+Average running time BS: 30.3524
+Jump distance: 327680
+Average running time FS: 37.1308
+Average running time BS: 30.1583
+Jump distance: 655360
+Average running time FS: 36.4925
+Average running time BS: 28.568
+
+
