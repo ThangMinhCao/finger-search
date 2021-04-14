@@ -11,6 +11,7 @@ class Skiplist {
     struct Node {
       T x;
       int height;     // length of next
+      Node *prev;
       Node *next[];
     };
     Node *sentinel;
@@ -44,6 +45,7 @@ Skiplist<T>::Skiplist() {
   n = 0;
   sentinel = newNode(null, sizeof(int)*8);
   memset(sentinel->next, '\0', sizeof(Node*)*sentinel->height);
+  sentinel->prev = nullptr;
   stack = (Node**)new Node*[sentinel->height];
   finger = (Node**)new Node*[sentinel->height];
   for (int i =  0; i < sentinel->height; i++) {

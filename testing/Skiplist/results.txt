@@ -42,8 +42,112 @@ Average running time BS: 43.4521
 Jump size: 163840
 Average running time FS: 58.7704
 Average running time BS: 42.898
-Jump size: 327680 (2^14 * 20)
+Jump size: 327680
 Average running time FS: 60.6042
 Average running time BS: 43.0317
+Jump size: 655360
+Average running time FS: 63.108
+Average running time BS: 42.6243
 
+Number of nodes: 500000
+Initialization time taken: 0.11738s
+Jump size: 20
+Average running time FS: 33.3553
+Average running time BS: 40.3598
+Jump size: 40
+Average running time FS: 35.2943
+Average running time BS: 40.3495
+Jump size: 80
+Average running time FS: 37.1901
+Average running time BS: 40.6793
+Jump size: 160
+Average running time FS: 44.9399
+Average running time BS: 43.2143
+Jump size: 320
+Average running time FS: 42.0989
+Average running time BS: 43.779
+Jump size: 640
+Average running time FS: 46.2148
+Average running time BS: 42.1959
+Jump size: 1280
+Average running time FS: 47.3775
+Average running time BS: 42.8097
+Jump size: 2560
+Average running time FS: 49.2725
+Average running time BS: 43.1764
+Jump size: 5120
+Average running time FS: 50.3373
+Average running time BS: 43.024
+Jump size: 10240
+Average running time FS: 51.3983
+Average running time BS: 43.2393
+Jump size: 20480
+Average running time FS: 54.1606
+Average running time BS: 43.5726
+Jump size: 40960
+Average running time FS: 55.9408
+Average running time BS: 43.3223
+Jump size: 81920
+Average running time FS: 58.3913
+Average running time BS: 43.4975
+Jump size: 163840
+Average running time FS: 58.4985
+Average running time BS: 40.75
+Jump size: 327680
+Average running time FS: 55.2528
+Average running time BS: 42.41
+Jump size: 655360
+Average running time FS: 59.7242
+Average running time BS: 41.163
 
+## After adding linear searching ##
+Number of nodes: 5000000
+Initialization time taken: 2.01963s
+Jump size: 20
+Average running time FS: 20
+Average running time BS: 43.5811
+Jump size: 40
+Average running time FS: 40
+Average running time BS: 41.5027
+Jump size: 80
+Average running time FS: 40.8913
+Average running time BS: 40.0918
+Jump size: 160
+Average running time FS: 43.3681
+Average running time BS: 41.7235
+Jump size: 320
+Average running time FS: 45.27
+Average running time BS: 42.1257
+Jump size: 640
+Average running time FS: 47.6589
+Average running time BS: 43.9823
+Jump size: 1280
+Average running time FS: 48.7145
+Average running time BS: 44.4602
+Jump size: 2560
+Average running time FS: 49.1672
+Average running time BS: 43.8023
+Jump size: 5120
+Average running time FS: 51.0105
+Average running time BS: 43.5328
+Jump size: 10240
+Average running time FS: 53.1527
+Average running time BS: 44.0019
+Jump size: 20480
+Average running time FS: 54.3721
+Average running time BS: 43.4647
+Jump size: 40960
+Average running time FS: 55.8258
+Average running time BS: 42.5021
+Jump size: 81920
+Average running time FS: 57.0091
+Average running time BS: 44.1179
+Jump size: 163840
+Average running time FS: 60.1422
+Average running time BS: 43.0084
+Jump size: 327680
+Average running time FS: 61.7512
+Average running time BS: 44.1739
+Jump size: 655360
+Average running time FS: 63.5892
+Average running time BS: 44.8285

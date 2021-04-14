@@ -33,7 +33,6 @@ Briefly, Treap is a Randomized Binary Search Tree whose properties are the combi
 
 In this section, Finger Search on Treaps will be introduced along with my implementation. Due to R. Seidel and C.R. Aragon (see \cite{1}), there are several ways to achieve the running time proportional to the distance $d$ such as using multiple pointers, multiple keys, or even without anything by relying on the shortness of the search path, and these approaches all give us the $O(\log d)$ expected running time, see \cite{1} for more details. What makes Finger Search different from normal search on Treaps is that if we start at the finger $f$ and look for a node $v$, Finger Search would points out the lowest common ancestor, denoted LCA, of $f$ and $v$, then it performs searching down as normal. Since if we do Finger Search without any assistance of other elements, the excess path in some cases may be longer compared to the path that we are supposed to search on. To minimize the probability that we get these cases, multiple extra pointers are definitely useful, which is the approach used in this implementation.
 
-
 \begin{figure}
 \centering
 \vspace{1mm}
@@ -45,6 +44,8 @@ In this section, Finger Search on Treaps will be introduced along with my implem
 \end{figure}
 Based on what R. Seidel and C.R. Aragon found (see Section 5.4 of \cite{1}), denote a *left parent* or a *right parent* of a node $u$ is the first ancestor of $u$ on the path from $u$ to the *root* node so that $u$ is on the ancestor's right or left subtree, respectively (see Figure \ref{fig1:figs}). With this property, we can get the LCA quickly by jumping through *left parents* or *right parents* without traveling through all nodes on the upward path. From the LCA, we start doing Binary Search downwards to get to the node $v$.
 
+\underline{\textbf{Note}}: Implementation of data structures in this implementation is using \code{template} for generic type \code{T}.
+
 ## 2.2. Implementation
 
 Since Finger Search does not affect much on the normal implementation of Treap, only some small changes are made outside of the Finger Search function. The main addition is a new *finger* node pointer property of the Treap class. Other important changes are the Node class's properties and rotation functions.
@@ -52,7 +53,6 @@ Since Finger Search does not affect much on the normal implementation of Treap, 
 ### 2.2.1. The Node class
 
 To handle *left parent* and *right parent* which vary between different nodes, I added two corresponding pointers to each node other than the actual parent. Other properties remain the same. The code is given below.
-\newpage
 
 \begin{lstlisting}
 template<typename T>
@@ -85,6 +85,7 @@ As described above, Finger Search would find the LCA of the finger and the targe
   2. If $f > v$, we start chasing *left parent* from *f* until reaching a null pointer or a node has data greater than both *f* and *v*. The previous node at the end of the loop is the LCA. If $f < v$, we chase *right parent* instead.
   3. Perform the usual downward search from the LCA.
   4. Before returning the node, if it is found, it will be the new *finger*.
+\vspace{-4mm}
 
 The C++ code is provided below.
 
@@ -131,7 +132,6 @@ Rotation is a main part of Treaps which maintains the heap property. Since a nod
 
 Going to the real life implementation, those changes are only a couple of lines for each rotation type. The implementations of left and right rotation are given below.
 
-
 \begin{lstlisting}
 template<class T>
 void Treap<T>::leftRotate(Node<T>* &node) {
@@ -140,9 +140,8 @@ void Treap<T>::leftRotate(Node<T>* &node) {
   node->parent = r;
   node->rightParent = r; // set right parent of the given node
   r->leftParent = node->leftParent; // set left parent of right child 
-  if (r->left) {
+  if (r->left)
     r->left->parent = node;
-  }
   node->right = r->left;
   r->left = node;
   r->parent = parent;
@@ -155,7 +154,6 @@ void Treap<T>::leftRotate(Node<T>* &node) {
   }
   node = r;
 }
-
 template<class T>
 void Treap<T>::rightRotate(Node<T>* &node) {
   Node<T> *parent = node->parent;
@@ -163,9 +161,8 @@ void Treap<T>::rightRotate(Node<T>* &node) {
   node->parent = l;
   node->leftParent = l; // set left parent of the given node
   l->rightParent = node->rightParent; // set right parent of left child 
-  if (l->right) {
+  if (l->right)
     l->right->parent = node;
- }
   node->left = l->right;
   l->right = node;
   l->parent = parent;
@@ -179,8 +176,9 @@ void Treap<T>::rightRotate(Node<T>* &node) {
   node = l;
 }
 \end{lstlisting}
+\vspace{-8mm}
 
-## 2.3. Running time
+## 2.3. Running time {#section2.3}
 
 Let $d$ be a difference between *ranks*^[position of the value in the sorted array of all values on the tree] of any two node values on a Treap. Due to Seidel and Aragon \cite{1}, the expected running time of Finger Search on Treap theoretically is $O(\log d)$. Therefore, the closer to the $finger$ the target value is, the faster the expected running time will be. Thus, to test and prove if the running time of Finger Search in practice is identical to the theory, the search value would be chosen based on a given $d$.
 
@@ -193,6 +191,7 @@ At first, the Treap is initialized with $5\,000\,000$ nodes that contain all val
 
 >- Repeat $5\,000\,000$ times: search for a value $finger + d$ or $finger - d$ which is chosen randomly in the two. Each time a node is found, the $finger$ is set to that node.
 >- Calculate the average running time of the trials.
+\vspace{-3mm}
 
 See figure \ref{fig:TreapResult} below for the result data.
 \begin{figure}
@@ -263,9 +262,207 @@ As you can see, while the running time of Finger Search increases when $d$ incre
 
 # 3. \enspace Finger Search on Skiplists {#section3}
 
+## 3.1 Overview
+
+In this section, we go over the  structure of Skiplist and how Finger Search is performed  on it. Skiplist is an interesting and beautiful structure which uses randomization to optimize the times to search for an element and some other related operations to $O(\log n)$. It has a structure of multiple Linked Lists with common nodes (specifically they are the same pointers). On each level, each node is randomly determined if it exists on the next higher level. With this randomized feature, Skiplist provides a "magical" search path that produces $O(\log n)$ running time.
+
+With the randomized property, Skiplist supports Finger Seach in $O(\log d)$ time. Due to W. Pugh (see \cite{2}), we store the $finger$ differently. Other than just one node at a place, we store the whole "cover" from the lowest node to the highest node of the list that are equal or less than the node at level 1 of the finger. In other words, the finger is an array of nodes that "cover" the bottom-left corner of the Skiplist from the chosen node. See figure \ref{fig3:figs} for example.
+
+With this *finger* array, the main idea if Finger Search on Skiplist due to W. Pugh is:
+\vspace{-2.5mm}
+
+- If value of the node at the lowest level of the *finger* is less than the search value, find the highest level whose node of the *finger* has *next* pointer less than the search value.
+- If value of the node at the lowest level of the *finger* is larger than the search value, find the lowest level whose node of the *finger* has *next* pointer less than the search value.
+
+From the found level, we start searching normally (on the normal Skiplist search path) from the *next* node of the *finger* pointer at that level.
+
+\begin{figure}
+\centering
+\vspace{1mm}
+\includegraphics[height=0.3\textwidth]{Skiplist.png}
+\caption{\label{fig3:figs}Visualization of a \emph{finger} on a Skiplist. In this example, finger is an array of all nodes cover the bottom-left corner of the Skiplist from node 3.}
+
+\  
+\hrule
+\end{figure}
+
+## 3.2. Implementation
+
+Due to W. Pugh (see \cite{2}), Finger Search on Skiplist does not require any additional properties of any other functions or the node class to perform searching in $O(\log d)$. Thus, Finger Search is implemented in its own function without any outside requirements. Let $x$ be the search value and assume indices of arrays starts at 1. The steps of Finger Search on Skiplist is described below:
+
+1. If $finger[1] < x$, then start from level 2, move upwards until the next pointer of current node points to a node larger than $x$, null or the current $level$ out of bound. At that time, $level -1$ is the level we start searching normally.
+
+   Otherwise, starting from level 2, we also search upwards but until we see the first level such that the next node of the $finger$ at that level is less than the search node.
+2. From the next node of the $finger$ pointer at the $level$ found at the previous step, perform search as usual (if next node $< x$, move to the $next$ pointer, otherwise, move down one level until reaching the lowest).
+
+   Each time it searches **down**, set the finger at the current $level$ to the current node to update the $finger$.
+
+Implementation of Skiplist in this project is provided by Pat Morin, see \cite{2}. The C++ code is provided below. More error checking is provided while searching upwards.
+
+\begin{lstlisting}
+template<class T>
+T Skiplist<T>::fingerSearch(T x) {
+  int level = 1;
+  Node* start;
+  if (compare(finger[0]->x, x) == -1) {
+    while (level <= h &&
+            (compare(finger[level]->x, x) >= 0
+              || (finger[level]->next[level] != nullptr
+                  && compare(finger[level]->next[level]->x, x) == -1))) {
+      if (compare(finger[level]->x, x) == 0) {
+        return x;
+      }
+      level++;
+    }
+    start = finger[level]->next[level];
+  } else {
+    while (level <= h &&
+            (compare(finger[level]->x, x) >= 0
+              || (finger[level]->next[level] != nullptr
+                   && compare(finger[level]->next[level]->x, x) >= 0))) {
+      if (compare(finger[level]->x, x) == 0) return x;
+      level++;
+    }
+    if (level > h) {
+      level = h;
+      start = sentinel;
+    } else {
+      start = finger[level]->next[level];
+    }
+  }
+  for (int i = level; i >= 0; i--) {
+    while (start->next[i] != nullptr && compare(start->next[i]->x, x) < 0) {
+      start = start->next[i];
+    }
+    finger[i] = start;
+  }
+  return start->next[0] == nullptr ? null : start->next[0]->x;
+}
+\end{lstlisting}
+
+## 3.3. Running time
+
+The running time of Finger Search on Skiplist is identical to Treap. The concept of distance between $ranks$ of the lowest node of the $finger$ and the search value is applied the same as Treap. Theoretically, the running time of Finger Search on Skiplist is $O(\log d)$, so if the search value $x$ is closer to the lowest node of $finger$, search time would be faster.
+
+The same testing method is used as on Treap: initialize the Skiplist with $5\,000\,000$ integers from 1 to $5\,000\,000$, so the difference between $ranks$ of values is the same as the difference between those values. The testing $d$ is also $\in \{20, 20\cdot 2^1, 20\cdot 2^2, \ldots, 20\cdot 2^{15}\}$, and using the procedure the same on Treap (see [Section 2.3](#section2.3) for more details).
+
+### 3.3.1. Normal running time due to W. Pugh's approach {#section3.3.1}
+
+The result data with W. Pugh's approach is provided below.
+
+\begin{figure}
+\centering
+\begin{minipage}{1\textwidth}
+  \centering
+	\begin{tabularx}{0.8\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+  \hline
+      $d$  & Finger Search time  & Usual search path from Sentinel \\ \hline
+     20  & 39.8817  & 44.7127 \\ \hline
+     40  & 40.3754  & 41.5027 \\ \hline
+     80  & 41.9393  & 41.3186 \\ \hline
+    160  & 43.7000  & 41.5630 \\ \hline
+    320  & 46.2551  & 43.6607 \\ \hline
+    640  & 48.3684  & 44.7823 \\ \hline
+   1280  & 48.1796  & 44.3474 \\ \hline
+   2560  & 50.3686  & 44.5856 \\ \hline
+   5120  & 51.7555  & 43.8798 \\ \hline
+  10240  & 53.2053  & 43.3164 \\ \hline
+  20480  & 54.6277  & 43.2839 \\ \hline
+  40960  & 56.1563  & 43.2849 \\ \hline
+  81920  & 57.9879  & 43.4521 \\ \hline
+ 163840  & 58.7704  & 42.8980 \\ \hline
+ 327680  & 60.6042  & 43.0317 \\ \hline
+ 655360  & 63.1080  & 42.6243 \\ \hline
+  \end{tabularx}
+\end{minipage}
+\caption[Caption]{Average running time of Finger Search and Usual search from sentinel on Skiplist with $d$ in $[20, 20\cdot2^1, 20\cdot2^2, \ldots, 20\cdot2^{15}]$. The total number of search times for each $d$ is $5\,000\,000$. The running times are in \textit{number of nodes visited} at the end of the search function.}
+\label{fig:SkiplistResult}
+\end{figure}
+\hrule
+\  
+\  
+\  
+
+\vspace{3mm}
+
+As you can see, the running time behaviour of Finger Search on Skiplist is identical to Treap. It is increasing by about 2 nodes visited when $d$ is doubled, so it leads to the running time $2\log d = O(\log d)$. The only difference is the running time of Finger Search on Skiplist is much slower compared to Treap (it starts from 40 nodes visited while on Treap, it starts from 8 nodes visited), see Figure \ref{fig:SkiplistResult} and Figure \ref{fig:TreapResult} for more details.
+
+### 3.3.2. Running time with additional concurrent linear search
+
+Additional to the approach of W. Pugh (see \cite{2}), I introduce a simple concurrent linear search along with Finger Search when we search upwards or downwards. For every iteration and with a tracking variable, we perform a linear search (go to the next node or previous node after every iteration) from the lowest level of the $finger$ towards the search value $x$. This approach is created in the hope of reduce the running time of Finger Search if the $finger$ is close to $x$.
+
+Running time of Finger Search with linear search is provided below.
+
+\begin{figure}
+\centering
+\begin{minipage}{1\textwidth}
+  \centering
+	\begin{tabularx}{0.8\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+  \hline
+      $d$  & Finger Search time with linear search  & Usual search path from Sentinel \\ \hline
+     20  & 20      & 43.5811 \\ \hline
+     40  & 40      & 41.5027 \\ \hline
+     80  & 40.8913 & 40.0918 \\ \hline
+    160  & 43.3681 & 41.7235 \\ \hline
+    320  & 45.2700 & 42.1257 \\ \hline
+    640  & 47.6589 & 43.9823 \\ \hline
+   1280  & 48.7145 & 44.4602 \\ \hline
+   2560  & 49.1672 & 43.8023 \\ \hline
+   5120  & 51.0105 & 43.5328 \\ \hline
+  10240  & 53.1527 & 44.0019 \\ \hline
+  20480  & 54.3721 & 43.4647 \\ \hline
+  40960  & 55.8258 & 42.5021 \\ \hline
+  81920  & 57.0091 & 44.1179 \\ \hline
+ 163840  & 60.1422 & 43.0084 \\ \hline
+ 327680  & 61.7512 & 44.1739 \\ \hline
+ 655360  & 63.5892 & 44.8285 \\ \hline
+  \end{tabularx}
+\end{minipage}
+\caption[Caption]{Average running time of Finger Search with linear search and Usual search from sentinel on Skiplist with $d$ in $[20, 20\cdot2^1, 20\cdot2^2, \ldots, 20\cdot2^{15}]$. The total number of search times for each $d$ is $5\,000\,000$. The running times are in \textit{number of nodes visited} at the end of the search function.}
+\label{fig:SkiplistLinearSearchResult}
+\end{figure}
+\hrule
+\  
+\  
+\  
+
+\vspace{3mm}
+
+It is obvious that the linear search helps improve running time searching for a value very close to the $finger$. As long as the Finger Search path to the value is longer than the $ranks$ between them, the linear search reduce the search time equals to the difference in $ranks$. However, when $d$ gets larger, Finger Search remains search time $O(\log d)$ while the linear search is $O(d)$, so the larger $d$ gets, the faster Finger Search is compared to linear search. As you can see in Figure \ref{fig:SkiplistLinearSearchResult}, with $d \in \{20, 40\}$, Finger Search time is equal to $d$ (which is the linear search time) while if $d\in\{80, 160,\ldots, 655360\}$, running time of Finger Search is less than $d$ (which is the normal Finger Search time). Since there is only a small portion of $d$ in which linear search is faster, we can conclude that the addition of it in Finger Search is not useful, and it does not reflect and have any contribute to the consistent $O(\log d)$ running time of Finger Search.
+
+# 4. Finger Search on Treaps and Skiplists comparison
+
+## 4.1. Running time
+
+In theory, since both Treap and Skiplist are randomized data structures, they are very suitable for Finger Search. With that property, they produce search time $O(\log d)$ with $d$ is the difference between $ranks$ of the $finger$'s value and the search value. In practice, the running time of both reflect the $O(\log d)$ time. Specifically, times search on both structures increase by about 2 in average when $d$ is doubled. This is consistent for both randomized data structure. However, when we compare them, the time of Finger Search on Treap is much faster, see [Section 3.3.1](#section3.3.1) and [Section 2.3](#section2.3) for detailed data.
+
+## 4.2. Implementation difficulties
+
+Although all data structures have the same idea about Finger Search, implementation of each data structure is very different from the others. Through implementations of Finger Search of Treap and Skiplist, to me, the easier one is Treap. Even I needed to change some functions other than the new Finger Search function, while the only change in Skiplist is the new search function, the implementation of Finger Search on Treap is very simple compared to Skiplist.
+
+On Treap, changing the rotation functions takes only two lines and easy to keep track. For the Finger Search function, I did not need complicated error checking for special cases since they are automatically excluded in Finger Search. Therefore, the implementation is straightforward and even shorter.
+
+On Skiplist, there are cases that the $next$ pointer is $null$ or the pointer is going out of the list. To handle these cases, error checking is needed in the function. In addition, since the $finger$ is not just a pointer while it is an array in Skiplist, changing between different level is needed and and it is more complicated compare to Treap while it just compares the value of the pointer with current node's value.
+
+# 5. Concluding remarks 
+
+Finger Search and its implementations has been described detailedly in the report. Its performance is exactly as theory as producing running time $O(\log d)$. There are several conclusions regarding to Finger Search in the real life:
+
+1. The algorithm's searching approach is not the same for every data structure. Each of them has its own implementation and running time.
+2. For both Treap and Skiplist, Finger Search runs in $O(\log d)$. Specifically, it is $\approx 2\log d$ while the running time increases by 2 if $d$ is doubled.
+3. Finger Search on Treap is much faster than on Skiplist.
+
 \newpage
 \begin{thebibliography}{9}
 \bibitem{1}
 Seidel, R., Aragon, C.R. Randomized search trees. \emph{Algorithmica} 16, 464–497 (1996). \url{https://doi.org/10.1007/BF01940876}
+\bibitem{2}
+W. Pugh. \emph{A skip list cookbook}. Technical Report CS-TR-2286.1, Dept. of Computer
+Science, University of Maryland, College Park, 1989.
+\bibitem{3}
+Morin, P. (2014). \emph{Open Data Structures}. Edmonton: Athabasca University Press.
+\vspace{-1.5mm}
+
+\url{https://opendatastructures.org/}
 
 \end{thebibliography}

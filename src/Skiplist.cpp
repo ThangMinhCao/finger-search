@@ -60,6 +60,9 @@ bool Skiplist<T>::add(T x) {
     stack[++h] = sentinel; // height increased
   for (int i = 0; i <= w->height; i++) {
     w->next[i] = stack[i]->next[i];
+    if (w->next[i])
+      w->next[i]->prev = w;
+    w->prev = stack[i];
     stack[i]->next[i] = w;
   }
   n++;
@@ -136,14 +139,19 @@ T Skiplist<T>::fingerSearch(T x) {
   numNodesVisited = 0;
   int level = 1;
   Node* start;
+  Node* linearSearchStart = finger[0];
   if (compare(finger[0]->x, x) == -1) {
     while (level <= h &&
-            (compare(finger[level]->x, x) >= 0
-              || (finger[level]->next[level] != nullptr
+            ((finger[level]->next[level] != nullptr
                   && compare(finger[level]->next[level]->x, x) == -1))) {
+      std::cout << "Searching right" << std::endl;
       if (compare(finger[level]->x, x) == 0) {
         return x;
       }
+      if (compare(linearSearchStart->x, x) == 0) {
+        return x;
+      }
+      linearSearchStart = linearSearchStart->next[0];
       level++;
       numNodesVisited++;
     }
@@ -153,7 +161,15 @@ T Skiplist<T>::fingerSearch(T x) {
             (compare(finger[level]->x, x) >= 0
               || (finger[level]->next[level] != nullptr
                    && compare(finger[level]->next[level]->x, x) >= 0))) {
+      std::cout << "Searching left" << std::endl;
+
+      if (linearSearchStart != sentinel)
+        std::cout << "current value: " << linearSearchStart->x << std::endl;
+
       if (compare(finger[level]->x, x) == 0) return x;
+
+      if (linearSearchStart)
+        linearSearchStart = linearSearchStart->prev;
       level++;
       numNodesVisited++;
     }
@@ -164,6 +180,7 @@ T Skiplist<T>::fingerSearch(T x) {
       start = finger[level]->next[level];
     }
   }
+  std::cout << "Searching down" << std::endl;
   for (int i = level; i >= 0; i--) {
     numNodesVisited++;
     while (start->next[i] != nullptr && compare(start->next[i]->x, x) < 0) {
@@ -172,6 +189,7 @@ T Skiplist<T>::fingerSearch(T x) {
     }
     finger[i] = start;
   }
+  std::cout << "Searching end" << std::endl;
   return start->next[0] == nullptr ? null : start->next[0]->x;
 }
 

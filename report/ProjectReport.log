@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.17)  23 MAR 2021 17:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.17)  14 APR 2021 09:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1053,63 +1053,82 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [1
 
 {/home/hswin/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<tree.png, id=67, 282.05376pt x 325.215pt>
+<tree.png, id=103, 1128.215pt x 1300.86pt>
 File: tree.png Graphic file (type png)
 <use tree.png>
 Package pdftex.def Info: tree.png  used on input line 191.
-(pdftex.def)             Requested size: 187.89908pt x 216.65231pt.
-[2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.223 given below. \newpage
-                            <./Tree.png>]
+(pdftex.def)             Requested size: 187.88617pt x 216.63744pt.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-25.
+09.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+) [2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.227 
+       <./Tree.png>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 226.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 229.
 [3]
-<TreeRotation.png, id=123, 512.91624pt x 201.75375pt>
+<TreeRotation.png, id=155, 512.91624pt x 201.75375pt>
 File: TreeRotation.png Graphic file (type png)
 <use TreeRotation.png>
-Package pdftex.def Info: TreeRotation.png  used on input line 320.
+Package pdftex.def Info: TreeRotation.png  used on input line 323.
 (pdftex.def)             Requested size: 358.27975pt x 140.92804pt.
 [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.337  
-        node->rightParent = r; // set right parent of the given node <./TreeRot
-ation.png>] [5]
+l.336 void 
+           Treap<T>::leftRotate(Node<T>* &node) { <./TreeRotation.png>] [5]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-12.
+13.
 (/home/hswin/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [6pdfTeX warning (ext4): destination with the same identifier (name{figure.3}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.451 \newpage
+l.452 \newpage
               ]
 PGFPlots: reading {TreapGraph.txt}
+<Skiplist.png, id=247, 2810.5pt x 875.27pt>
+File: Skiplist.png Graphic file (type png)
+<use Skiplist.png>
+Package pdftex.def Info: Skiplist.png  used on input line 548.
+(pdftex.def)             Requested size: 452.51959pt x 140.92752pt.
 [7pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.503 \newpage
-              ] [8] (./ProjectReport.aux)
+l.554 
+      ] [8pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.601  
+              return x; <./Skiplist.png>] [9] [10pdfTeX warning (ext4): destina
+tion with the same identifier (name{figure.6}) has been already used, duplicate
+ ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.741 
+      ] [11pdfTeX warning (ext4): destination with the same identifier (name{fi
+gure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.780 
+      ] [12] [13] (./ProjectReport.aux)
 Package rerunfilecheck Info: File `ProjectReport.out' has not changed.
-(rerunfilecheck)             Checksum: C7FE3FCAA2B353A59A172559F07DBE08;1464.
+(rerunfilecheck)             Checksum: E1A316F3AC490A8767C7C6049CE72F76;3453.
  ) 
 Here is how much of TeX's memory you used:
- 36680 strings out of 479000
- 805011 string characters out of 5860167
- 1675980 words of memory out of 5000000
- 53250 multiletter control sequences out of 15000+600000
- 480357 words of font info for 156 fonts, out of 8000000 for 9000
+ 36842 strings out of 479000
+ 807106 string characters out of 5860167
+ 1694980 words of memory out of 5000000
+ 53300 multiletter control sequences out of 15000+600000
+ 482322 words of font info for 177 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,13n,88p,729b,2130s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/hswin/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/hswi
@@ -1129,10 +1148,10 @@ lmr8.pfb></home/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></ho
 me/hswin/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/hswin/.Tin
 yTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></home/hswin/.TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtt12.pfb>
-Output written on ProjectReport.pdf (8 pages, 305845 bytes).
+Output written on ProjectReport.pdf (13 pages, 437991 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 280 compressed objects within 3 object streams
- 130 named destinations out of 1000 (max. 500000)
- 43103 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 454 PDF objects out of 1000 (max. 8388607)
+ 413 compressed objects within 5 object streams
+ 199 named destinations out of 1000 (max. 500000)
+ 43180 words of extra memory for PDF output out of 51595 (max. 10000000)
 

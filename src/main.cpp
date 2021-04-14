@@ -4,7 +4,7 @@
 #include "../include/Skiplist.h"
 
 using T = double;
-#define NUM_NODES 5000000
+#define NUM_NODES 100
 
 void treapTest();
 
